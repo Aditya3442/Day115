@@ -1,0 +1,16 @@
+class Solution {
+
+    public boolean canMakeSubsequence(String str1, String str2) {
+        int index = 0;
+        int m = str1.length();
+        int n = str2.length();
+        for (int i = 0;i < m && index < n;++i) {
+            if(str1.charAt(i) == str2.charAt(index)||(str1.charAt(i) + 1 == str2.charAt(index))||
+                (str1.charAt(i) - 25 == str2.charAt(index))
+            ) {
+                index++;
+            }
+        }
+        return index == n;
+    }
+}
